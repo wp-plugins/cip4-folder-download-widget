@@ -1,20 +1,32 @@
 
 td.cip4-fd-row-filename {
-	width: 45%;
+	width: 2%;
 	text-align: left;
+	vertical-align: middle;
+	padding-right: 0px;
+}
+
+td.cip4-fd-row-filename {
+	width: 43%;
+	text-align: left;
+	vertical-align: middle;
+	padding-left: 0px;
 }
 
 td.cip4-fd-row-created {
 	width: 30%;
 	text-align: right;
+	vertical-align: middle;
 }
 
 td.cip4-fd-row-size {
 	width: 15%;
 	text-align: right;
+	vertical-align: middle;
 }
 
 td.cip4-fd-row-downloads {
 	width: 10%;
 	text-align: right;
+	vertical-align: middle;
 }

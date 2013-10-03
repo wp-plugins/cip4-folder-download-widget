@@ -84,8 +84,9 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 						$item['filename'] = $file;
 						$item['downloads'] = $downloads;
 						$item['bytes'] = number_format(filesize($filepath) / 1024 / 1024, 1, ".", "") . ' MB';
-						$item['created'] = date ("Y-m-d H:i:s", filectime($filepath));
+						$item['modified'] = filemtime($filepath);
 						$item['link'] = plugins_url() . "/cip4-folder-download-widget/cip4-download.php?target=" . $filepath . "&info=" . $infoPath;
+						$item['extension'] = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
 						$items[] = $item;
 					}
 				}
@@ -108,11 +109,47 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 			
 			foreach($items as $item) {
 				
+				// find icon extension
+				$icon = 'other.png';
+				$icons = scandir(dirname(__FILE__) . '/icons/');
+				$key = array_search($item['extension'] . '.png', $icons);
+				
+				if($key !== FALSE) {
+					$icon = $icons[$key];
+				}
+				
+				// time diff
+    			$date_modified    = new  DateTime('@' . $item['modified']);
+    			$date_now      = new DateTime();
+    			$diff = $date_modified->diff($date_now); 
+				
+				$y = $diff->y;
+				$m = $diff->m;
+				$d = $diff->d;
+				$h = $diff->h;
+				$i = $diff->i;
+				$s = $diff->s;
+				
+				if($y == 0 && $m == 0 && $d > 0) {
+					$modified = $d . ' days ' . $h . ' hours';
+				} else if ($y == 0 && $m == 0 && $d == 0 && $h > 0) {
+					$modified = $h . ' hours';
+				} else if ($y == 0 && $m == 0 && $d == 0 && $h == 0 && $i > 0) {
+					$modified = $i . ' minutes';
+				} else if ($y == 0 && $m == 0 && $d == 0 && $h == 0 && $i == 0 && $s > 0) {
+					$modified = $s . ' sec.';
+				} else {
+					$modified = date_format($date_modified, 'Y-m-d');
+				}
+				
+				// table output
 				$table .= '<tr>';
-				$table .= '<td class="cip4-fd-row-filename"><a href="' . $item['link'] .'">'. $item['filename'] . '</a></td>';
+				$table .= '<td class="cip4-fd-row-icon" style="padding-left: 5px; padding-right: 0px"><img src=' . plugins_url() . '/cip4-folder-download-widget/icons/' . $icon . ' /></td>';
+				$table .= '<td class="cip4-fd-row-filename" style="padding-left: 10px"><a href="' . $item['link'] .'">'. $item['filename'] . '</a></td>';
 				$table .= '<td class="cip4-fd-row-downloads">' . $item['downloads'] . '</td>';
 				$table .= '<td class="cip4-fd-row-size">' . $item['bytes'] . '</td>';
-				$table .= '<td class="cip4-fd-row-created">' . $item['created'] . '</td>';
+				// $table .= '<td class="cip4-fd-row-created">' . $item['modified'] . '</td>';
+				$table .= '<td class="cip4-fd-row-created">' . $modified . '</td>';
 				$table .= '</tr>';
 			}
 			
@@ -127,10 +164,17 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 	//Update the widget 
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
+		
+		// check for last slash in folder
+		$folder = $new_instance['folder'];
+		
+		if(substr($folder, -1) != '/') {
+			$folder .= '/';
+		}
 
 		//Strip tags from title and name to remove HTML 
 		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['folder'] = strip_tags( $new_instance['folder'] );
+		$instance['folder'] = strip_tags( $folder );
 
 		return $instance;
 	}

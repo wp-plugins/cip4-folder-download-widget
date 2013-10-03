@@ -4,7 +4,7 @@ Donate link: http://www.cip4.org
 Tags: download, folder, file based, no database
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ or ftp to the specified directory and everything is fine.
 Originally this plugin was developed for personal use, only. However, if you like it, feel free
 to use it :-)
 
+The download icons are part of the crystal project and are published under GNU Lesser General Public License 2.1 (LGPL) 
+(http://creativecommons.org/licenses/LGPL/2.1/)
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
@@ -39,20 +42,32 @@ e.g.
 
 == Screenshots ==
 
-1. Just a simple download manager
+1. Screenshot of the widget
+2. Widget configuration
 
 == Changelog ==
 
 = 1.0 =
 * First very simple version
 
+= 1.1 =
+* Icons for mime types
+* Implementation of time interval for all items younger than  a month.
+* Automtic extension of the last slash in configuration if necessary
+
+
 == Upgrade Notice ==
 
 = 1.0 =
 * First version
 
+= 1.1 =
+* Usability improvements
+* Appearance improvements
+
 == Arbitrary section ==
 
+Yeahh...
 
 == A brief Markdown Example ==
 
