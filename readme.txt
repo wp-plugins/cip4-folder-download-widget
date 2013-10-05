@@ -4,7 +4,7 @@ Donate link: http://www.cip4.org
 Tags: download, folder, file based, no database
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,7 @@ e.g.
 
 1. Upload the `cip4-folder-download-widget` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+1. The Widget is optimized to be included by shortcodes using ids.
 
 == Frequently Asked Questions ==
 
@@ -44,6 +45,7 @@ e.g.
 
 1. Screenshot of the widget
 2. Widget configuration
+3. Implementation using shortcuts
 
 == Changelog ==
 
@@ -55,6 +57,9 @@ e.g.
 * Implementation of time interval for all items younger than  a month.
 * Automtic extension of the last slash in configuration if necessary
 
+= 1.2 =
+* Minor Bugfix
+* Extension of the documentation 
 
 == Upgrade Notice ==
 
@@ -64,6 +69,9 @@ e.g.
 = 1.1 =
 * Usability improvements
 * Appearance improvements
+
+= 1.2 =
+* Minor Bugfix
 
 == Arbitrary section ==
 
