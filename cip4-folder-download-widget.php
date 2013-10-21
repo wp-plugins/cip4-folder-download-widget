@@ -2,9 +2,9 @@
 /**
  * Plugin Name: CIP4 Folder Download Widget
  * Description: A widget that list all files in a defined folder for download.
- * Version: 1.2
+ * Version: 1.3
  * Author: CIP4 - Stefan Meissner
- * Author URI: http://www.cip4.org
+ * Author URI: http://community.cip4.org
  */
 
 
@@ -36,6 +36,7 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 		//Our variables from the widget settings.
 		$title = apply_filters('widget_title', $instance['title'] );
 		$folder = $instance['folder'];
+		$is_desc = isset( $instance['is_desc'] ) ? $instance['is_desc'] : false; 
 		
 		echo $before_widget;
 
@@ -102,6 +103,17 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 			}
 
 			fclose($fp);
+			
+			// sort items
+			foreach ($items as $key => $row) {
+			    $filename[$key]  = $row['filename'];
+			}
+			
+			if($is_desc) {
+				array_multisort($filename, SORT_DESC, $items);
+			} else {
+				array_multisort($filename, SORT_ASC, $items);
+			}
 			
 			// output
 			$table = '';
@@ -175,6 +187,7 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 		//Strip tags from title and name to remove HTML 
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['folder'] = strip_tags( $folder );
+		$instance['is_desc'] = $new_instance['is_desc'];  
 
 		return $instance;
 	}
@@ -183,7 +196,7 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 	function form( $instance ) {
 
 		//Set up some default widget settings.
-		$defaults = array( 'title' => __('MyFolder', 'example'), 'folder' => __('wp-content/uploads/', 'example') );
+		$defaults = array( 'title' => __('MyFolder', 'example'), 'folder' => __('wp-content/uploads/', 'example'), 'is_desc' => false );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<!-- Show widgte ID -->
@@ -215,6 +228,14 @@ class CIP4FolderDownloadWidget extends WP_Widget {
 			<label>
 				Folder:
 				<input id="<?php echo $this -> get_field_id('folder'); ?>" type="text" name="<?php echo $this -> get_field_name('folder'); ?>" value="<?php echo $instance['folder']; ?>" class="widefat" />
+			</label>
+		</p>
+		
+		<!-- Sort -->
+		<p>
+			<label>
+				<input class="checkbox" type="checkbox" <?php checked( isset( $instance['is_desc']), true ); ?> id="<?php echo $this->get_field_id( 'is_desc' ); ?>" name="<?php echo $this->get_field_name( 'is_desc' ); ?>" />   
+    			<label for="<?php echo $this->get_field_id( 'is_desc' ); ?>"><?php _e('sort descendend', 'example'); ?></label>  
 			</label>
 		</p>
 

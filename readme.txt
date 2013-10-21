@@ -4,8 +4,8 @@ Donate link: http://www.cip4.org
 Tags: download, folder, file based, no database
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.2
-License: GPLv2 or  later
+Stable tag: 1.3
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A widget that list all files in a defined folder for download.
@@ -61,6 +61,9 @@ e.g.
 * Minor Bugfix
 * Extension of the documentation 
 
+= 1.3 =
+* Sort mechanism for filename (asc and desc)
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -72,6 +75,10 @@ e.g.
 
 = 1.2 =
 * Minor Bugfix
+
+= 1.3 =
+* New feature: sort mechanism for filename
+
 
 == Arbitrary section ==
 
