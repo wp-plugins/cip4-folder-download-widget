@@ -79,6 +79,9 @@ e.g.
 = 1.3 =
 * New feature: sort mechanism for filename
 
+= 1.4 =
+* New download mechanism.
+
 
 == Arbitrary section ==
 
