@@ -82,6 +82,9 @@ e.g.
 = 1.4 =
 * New download mechanism.
 
+= 1.5 =
+* Automatic Content-Type detection.
+
 
 == Arbitrary section ==
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CIP4 Folder Download Widget
  * Description: A widget that list all files in a defined folder for download.
- * Version: 1.4
+ * Version: 1.5
  * Author: CIP4 - Stefan Meissner
  * Author URI: http://community.cip4.org
  */

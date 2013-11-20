@@ -43,7 +43,7 @@
 	
 	// redirect to download
 	header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
+    header('Content-Type: ' . mime_content_type($target));
     header('Content-Disposition: attachment; filename='.basename($target));
     header('Content-Transfer-Encoding: binary');
     header('Expires: 0');
