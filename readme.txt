@@ -64,6 +64,15 @@ e.g.
 = 1.3 =
 * Sort mechanism for filename (asc and desc)
 
+= 1.4 =
+* New download mechanism.
+
+= 1.5 =
+* Automatic Content-Type detection.
+
+= 1.6 =
+* Improvement download mechanism.
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -85,6 +94,8 @@ e.g.
 = 1.5 =
 * Automatic Content-Type detection.
 
+= 1.6 =
+* Improvement download mechanism.
 
 == Arbitrary section ==
 
