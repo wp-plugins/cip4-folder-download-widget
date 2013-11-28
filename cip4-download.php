@@ -43,7 +43,7 @@
 	
 	// redirect to download
 	header('Content-Description: File Transfer');
-    header('Content-Disposition: attachment; filename=' . basename("$target"));
+    header('Content-Disposition: attachment; filename="' . basename($target) . '"');
 	header('Content-Type: application/octet-stream');
     header('Content-Length: ' . filesize($target));
     readfile($target, true);
