@@ -4,7 +4,7 @@ Donate link: http://www.cip4.org
 Tags: download, folder, file based, no database
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,15 @@ to use it :-)
 
 The download icons are part of the crystal project and are published under GNU Lesser General Public License 2.1 (LGPL) 
 (http://creativecommons.org/licenses/LGPL/2.1/)
+
+Shortcode: cip4download
+
+Attributes
+* title = Widget title
+* folder = Download Folder
+* is_desc = Descending Order (true / false)
+
+Example [cip4download title="MyFolder" folder="wp-content/uploads/" is_desc="true"]
 
 == Installation ==
 
@@ -79,6 +88,9 @@ e.g.
 = 1.8 =
 * I'm sorry for that, but there was another bug...
 
+= 1.9 =
+* Introduction of own shortcode "cip4download"
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -108,6 +120,9 @@ e.g.
 
 = 1.8 =
 * I'm sorry for that, but there was another bug...
+
+= 1.9 =
+* Introduction of own shortcode "cip4download"
 
 == Arbitrary section ==
 
