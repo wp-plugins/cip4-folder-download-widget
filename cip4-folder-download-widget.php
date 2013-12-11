@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CIP4 Folder Download Widget
  * Description: A widget that list all files in a defined folder for download.
- * Version: 1.9
+ * Version: 1.10
  * Author: CIP4 - Stefan Meissner
  * Author URI: http://community.cip4.org
  */
@@ -166,7 +166,7 @@ function createList($title, $folder, $is_desc = false, $is_tracked = false) {
 			$table .= '<td class="cip4-fd-row-icon" style="padding-left: 5px; padding-right: 0px"><img src=' . plugins_url() . '/cip4-folder-download-widget/icons/' . $icon . ' /></td>';
 			
 			if($is_tracked) {
-				$table .= '<td class="cip4-fd-row-filename" style="padding-left: 10px"><a href="' . $item['link'] .'" onClick="_gaq.push([\'_trackEvent\', \'' . $item['filename'] . '\', \'Download\']);">' . $item['filename'] . '</a></td>';
+				$table .= '<td class="cip4-fd-row-filename" style="padding-left: 10px"><a href="' . $item['link'] .'" onClick="_gaq.push([\'_trackEvent\', \'' . $title . '\', \'Download\', \'' . $item['filename'] . '\']);">' . $item['filename'] . '</a></td>';
 			} else {
 				$table .= '<td class="cip4-fd-row-filename" style="padding-left: 10px"><a href="' . $item['link'] .'">'. $item['filename'] . '</a></td>';
 			} 
