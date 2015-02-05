@@ -3,8 +3,8 @@ Contributors: meixxi
 Donate link: http://www.cip4.org
 Tags: download, folder, file based, no database
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 1.10
+Tested up to: 4.1
+Stable tag: 1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,7 +92,10 @@ e.g.
 * Introduction of own shortcode "cip4download"
 
 = 1.10 =
-* Performance improvements
+* Performance improvement.
+
+= 1.11 =
+* Security update.
 
 == Upgrade Notice ==
 
@@ -129,6 +132,9 @@ e.g.
 
 = 1.10 =
 * Performance improvements
+
+= 1.11 =
+ * Protection against directory traversal
 
 == Arbitrary section ==
 

@@ -2,9 +2,9 @@
 /**
  * Plugin Name: CIP4 Folder Download Widget
  * Description: A widget that list all files in a defined folder for download.
- * Version: 1.10
+ * Version
  * Author: CIP4 - Stefan Meissner
- * Author URI: http://community.cip4.org
+ * Author URI: http://www.cip4.org
  */
 
 
@@ -93,7 +93,7 @@ function createList($title, $folder, $is_desc = false, $is_tracked = false) {
 					$item['downloads'] = $downloads;
 					$item['bytes'] = number_format(filesize($filepath) / 1024 / 1024, 1, ".", "") . ' MB';
 					$item['modified'] = filemtime($filepath);
-					$item['link'] = plugins_url() . "/cip4-folder-download-widget/cip4-download.php?target=" . $filepath . "&info=" . $infoPath;
+					$item['link'] = plugins_url() . "/cip4-folder-download-widget/cip4-download.php?target=" . $filepath;
 					$item['extension'] = strtolower(pathinfo($filepath, PATHINFO_EXTENSION));
 					$items[] = $item;
 				}
