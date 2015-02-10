@@ -4,7 +4,7 @@ Donate link: http://www.cip4.org
 Tags: download, folder, file based, no database
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.11
+Stable tag: 1.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +97,9 @@ e.g.
 = 1.11 =
 * Security update.
 
+= 1.12 =
+* Minor Bugfix.
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -135,6 +138,9 @@ e.g.
 
 = 1.11 =
  * Protection against directory traversal
+ 
+ = 1.12 =
+ * Minor Bugfix
 
 == Arbitrary section ==
 
